@@ -27,7 +27,7 @@ body {
   font-size: 18px;
   height: 60px;
   width: 60px;
-  transition: width 0.3s ease;
+  transition: width 500ms ease;
   visibility: hidden;
   position: absolute;
   top: 45%;
@@ -45,7 +45,7 @@ body {
   position: absolute;
   top: 45%;
   left: 40%;
-  transition: transform 0.3s ease;
+  transition: transform 500ms ease;
 }
 
 .btn:focus,
@@ -90,10 +90,10 @@ body {
   text-align: center;
   color: #3c1b53;
   box-shadow: none;
-  transition: all 800ms ease;
+  transition: all 500ms ease 250ms;
 }
 
-.quote-card.visible{
+.quote-card.visible {
   background: #e2ade477;
   box-shadow: -13px 0px 16px 15px #e2ade477;
 }
@@ -101,6 +101,12 @@ body {
 .quote-card .quote {
   font-size: 30px;
   text-transform: lowercase;
+  visibility: hidden;
+  transition: all 500ms ease;
+}
+
+.quote-card.visible .quote {
+  visibility: visible;
 }
 
 .quote-card .author {

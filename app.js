@@ -1,7 +1,7 @@
 const search = document.querySelector(".search"),
   btn = document.querySelector(".btn");
 const input = $(".input"),
-  quote = $("#quote"),
+  quoteP = $("#quote"),
   author = $("#author");
 
 function randomPicker(array) {
@@ -9,24 +9,32 @@ function randomPicker(array) {
   return array[idx];
 }
 
+function updateDOM(data) {
+  const quoteParagraph = $("#quote"),
+    author = $("#author"),
+    quoteCard = $(".quote-card");
+
+  quoteParagraph.empty();
+  quoteParagraph.append(`<p>${data.content}</p>`);
+  author.text(data.author);
+  quoteCard.attr("class", "quote-card visible");
+
+  input.val("");
+  search.classList.toggle("active");
+}
+
+function searchAndUpdate(event) {
+  if (event.keyCode === 13) {
+    $.get(`https://quotable.io/search/quotes?query=${input.val()}`, (data) => {
+      const selectedQuote = randomPicker(data?.results);
+      updateDOM(selectedQuote);
+    });
+  }
+}
+
 btn.addEventListener("click", () => {
   search.classList.toggle("active");
   input.focus();
 });
 
-input.keydown((e) => {
-  const { keyCode } = e;
-
-  if (keyCode === 13) {
-    $.get(`https://quotable.io/search/quotes?query=${input.val()}`, (data) => {
-      const selectedQuote = randomPicker(data.results);
-      quote.empty();
-      quote.append(`<p>${selectedQuote.content}</p>`);
-      author.text(selectedQuote.author);
-      input.val("");
-      search.classList.toggle("active");
-    });
-
-    document.querySelector(".quote-card").classList.add("visible");
-  }
-});
+input.keydown(searchAndUpdate);
