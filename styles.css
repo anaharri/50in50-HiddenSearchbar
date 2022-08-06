@@ -77,21 +77,29 @@ body {
 }
 
 .quote-card {
-  background-color: #e2ade477;
-  width: 50%;
-  height: 40%;
-  padding:10% 10%;
+  background: transparent;
+  max-width: 55%;
+  height: fit-content;
+  width: fit-content;
+  min-height: 45%;
+  padding: 10% 15%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   text-align: center;
   color: #3c1b53;
+  box-shadow: none;
+  transition: all 800ms ease;
+}
+
+.quote-card.visible{
+  background: #e2ade477;
   box-shadow: -13px 0px 16px 15px #e2ade477;
 }
 
 .quote-card .quote {
-  font-size: 32px;
+  font-size: 30px;
   text-transform: lowercase;
 }
 
