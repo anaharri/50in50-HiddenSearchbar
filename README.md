@@ -5,10 +5,11 @@ Here is the fourth project of my 50in50 series, based on a Udemy course by Brad 
 ### __The task is to build simple, aesthetic interfaces and widgets using only* HTML, CSS & JS.__  
 
   
-For some of these, I just follow the tutorial exactly as it is, focused on sharpening those core concepts;  
-but on occasions, I take the tutorial as a starting point, and from there on I work on making it my own - playing with different styles, adding details, sometimes even using extra tools (e.g. LESS or SASS).
+For some of these, I just follow the tutorial exactly as it is, focused on sharpening those core concepts;  but on occasions, I take the tutorial as a starting point, and from there on I work on making it my own - playing with different styles, adding details, sometimes even using extra tools (e.g. LESS or SASS).  
 
-Either way, **my goal is always to have fun creating beautiful things** and expanding my toolkit, one line of code at a time.
+This tutorial in particular, was really just about building the animated searchbar. Since I finished it too quickly, I thought I would give it some functionality and build some context around it; using jQuery to get data from a [free API](https://quotable.io/), I turned the initial idea into a minimalistic quote generator.
+
+As always, **my goal is to have fun creating beautiful things** and expanding my toolkit, one line of code at a time.
 
   
 <hr/>  
