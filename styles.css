@@ -78,7 +78,7 @@ body {
 
 .quote-card {
   background: transparent;
-  max-width: 55%;
+  max-width: 50%;
   height: fit-content;
   width: fit-content;
   min-height: 45%;
@@ -95,7 +95,6 @@ body {
 
 .quote-card.visible {
   background: #e2ade477;
-  box-shadow: -13px 0px 16px 15px #e2ade477;
 }
 
 .quote-card .quote {
